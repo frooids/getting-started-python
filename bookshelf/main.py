@@ -13,7 +13,11 @@
 # limitations under the License.
 
 import logging
-
+try:
+  import googleclouddebugger
+  googleclouddebugger.enable(
+    breakpoint_enable_canary=False
+  )
 import firestore
 from flask import current_app, flash, Flask, Markup, redirect, render_template
 from flask import request, url_for
